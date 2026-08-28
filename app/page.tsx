@@ -1,69 +1,314 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import SiteNavigation from "./components/SiteNavigation";
+
+function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
+      <path
+        d="M5 12h13M14 7l5 5-5 5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
+
+function PraevorynMark({ light = false }: { light?: boolean }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={`brand-mark ${light ? "brand-mark-light" : ""}`}
+    >
+      <Image
+        alt=""
+        height={64}
+        priority
+        src="/praevoryn-mark.png"
+        width={64}
+      />
+    </span>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main>
+      <section className="hero" id="top">
+        <SiteNavigation activePage="home" />
+
+        <div className="orbit orbit-one" />
+        <div className="orbit orbit-two" />
+        <div className="hero-glow" />
+
+        <div aria-hidden="true" className="hero-animated-mark">
+          <div className="hero-mark-halo" />
+
+          <Image
+            alt=""
+            height={700}
+            priority
+            src="/praevoryn-mark.png"
+            width={700}
+          />
+        </div>
+
+        <div className="hero-content shell">
+          <p className="eyebrow">
+            <span />
+            Human-centred technology
+          </p>
+
+          <h1>
+            Building what
+            <br />
+            <em>comes next.</em>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="hero-copy">
+            Praevoryn builds intelligent systems that help people move
+            forward—with greater clarity, capability and agency.
+          </p>
+
+          <a className="primary-link" href="#about">
+            Discover Praevoryn
+            <ArrowIcon />
+          </a>
+        </div>
+
+        <div className="hero-footer shell">
+          <span>01 / PRAEVORYN</span>
+          <span>SCROLL TO EXPLORE —</span>
+        </div>
+      </section>
+
+      <section className="manifesto section shell" id="about">
+        <p className="section-label">01 — Our purpose</p>
+
+        <div className="two-column">
+          <h2>
+            Technology should expand
+            <br />
+            what people can become.
+          </h2>
+
+          <div className="body-copy">
+            <p>
+              We believe progress is meaningful when it strengthens human
+              potential. That belief shapes what we build, how we build it and
+              who we build it for.
+            </p>
+
+            <p>
+              Praevoryn creates enduring technology companies and intelligent
+              systems designed around real human ambitions—not technology for
+              its own sake.
+            </p>
+          </div>
+        </div>
+
+        <div className="positioning-statement">
+          <span>OUR POSITIONING</span>
+
+          <p>
+            A human-centred technology company
+            <br />
+            building intelligent systems for progress.
+          </p>
+
+          <PraevorynMark />
+        </div>
+      </section>
+
+      <section className="systems" id="systems">
+        <div className="section shell">
+          <p className="section-label section-label-light">
+            02 — Our products
+          </p>
+
+          <div className="systems-heading">
+            <h2>
+              One company.
+              <br />
+              <em>Expanding possibility.</em>
+            </h2>
+
+            <p>
+              We develop focused platforms with the ambition and architecture
+              to create meaningful progress at scale.
+            </p>
+          </div>
+
+          <article className="ascend-card">
+            <div className="ascend-meta">
+              <span>FLAGSHIP PLATFORM</span>
+              <span>ACTIVE / 2026</span>
+            </div>
+
+            <div className="ascend-body">
+              <div className="ascend-name">
+                <div className="ascend-logo-container">
+                  <Image
+                    alt="ASCEND logo"
+                    height={110}
+                    src="/ascend-logo.png"
+                    width={110}
+                  />
+                </div>
+
+                <h3>ASCEND</h3>
+              </div>
+
+              <div className="ascend-copy">
+                <p className="ascend-kicker">
+                  AN OPERATING SYSTEM FOR HUMAN POTENTIAL
+                </p>
+
+                <p>
+                  ASCEND helps people discover their direction, find relevant
+                  opportunities and turn ambition into structured, measurable
+                  progress.
+                </p>
+
+                <a
+                  href="https://ascendai.space"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Explore ASCEND
+                  <ArrowIcon />
+                </a>
+              </div>
+            </div>
+
+            <div className="ascend-progress">
+              <span />
+            </div>
+          </article>
+
+          <div className="products-page-link">
+            <Link href="/products">
+              View the Praevoryn portfolio
+              <ArrowIcon />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="principles section shell" id="principles">
+        <p className="section-label">03 — How we build</p>
+
+        <div className="principles-heading">
+          <h2>Principles before products.</h2>
+
+          <p>
+            Every system we build is measured against the same enduring
+            commitments.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="principles-list">
+          <article>
+            <span>01</span>
+            <h3>Human at the centre</h3>
+            <p>
+              Technology begins with human needs, realities and potential.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Intelligence with purpose</h3>
+            <p>
+              Intelligence is valuable when it produces clarity, agency and
+              progress.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Built to endure</h3>
+            <p>
+              We favour considered systems over fleeting features and
+              short-term noise.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Progress for more people</h3>
+            <p>
+              We design for access, relevance and meaningful impact across
+              borders.
+            </p>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="footer" id="contact">
+        <div className="footer-inner shell">
+          <p className="section-label section-label-light">
+            04 — What comes next
+          </p>
+
+          <div className="footer-call-to-action">
+            <h2>
+              Let&apos;s build what
+              <br />
+              <em>comes next.</em>
+            </h2>
+
+            <a href="mailto:hello@praevoryn.com">
+              Start a conversation
+              <ArrowIcon />
+            </a>
+          </div>
+
+          <div className="footer-navigation">
+            <div>
+              <p>COMPANY</p>
+              <Link href="/founder">Founder</Link>
+              <Link href="/products">Products</Link>
+            </div>
+
+            <div>
+              <p>SOCIAL</p>
+
+              <a
+                href="https://x.com/praevoryn"
+                rel="noreferrer"
+                target="_blank"
+              >
+                X / Twitter
+              </a>
+
+              <a
+                href="https://www.instagram.com/praevoryn?igsi=MXU4MWc4dDB0cWQ2Yg=="
+                rel="noreferrer"
+                target="_blank"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-bottom">
+            <Link className="wordmark" href="/">
+              <PraevorynMark light />
+              <span>PRAEVORYN</span>
+            </Link>
+
+            <p>
+              © 2026 Praevoryn. Building intelligent systems for progress.
+            </p>
+
+            <a href="#top">BACK TO TOP ↑</a>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
