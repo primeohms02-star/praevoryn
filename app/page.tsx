@@ -103,9 +103,9 @@ export default function Home() {
             </p>
 
             <p>
-              Praevoryn creates enduring technology companies and intelligent
-              systems designed around real human ambitions—not technology for
-              its own sake.
+              Praevoryn is the technology company behind ASCEND. We create
+              enduring intelligent systems around real human ambitions—not
+              technology for its own sake.
             </p>
           </div>
         </div>
@@ -168,9 +168,9 @@ export default function Home() {
                 </p>
 
                 <p>
-                  ASCEND helps people discover their direction, find relevant
-                  opportunities and turn ambition into structured, measurable
-                  progress.
+                  ASCEND is Praevoryn&apos;s flagship product. It helps people
+                  discover their direction, find relevant opportunities and
+                  turn ambition into structured, measurable progress.
                 </p>
 
                 <a
@@ -286,7 +286,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://www.instagram.com/praevoryn?igsi=MXU4MWc4dDB0cWQ2Yg=="
+                href="https://www.instagram.com/praevoryn"
                 rel="noreferrer"
                 target="_blank"
               >

@@ -1,6 +1,38 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import SiteNavigation from "../components/SiteNavigation";
+
+export const metadata: Metadata = {
+  title: "Products",
+  description:
+    "Explore ASCEND, Praevoryn's flagship product: an operating system that helps people find direction, opportunities and measurable progress.",
+  alternates: { canonical: "/products" },
+  openGraph: {
+    url: "https://www.praevoryn.com/products",
+    title: "Products | Praevoryn",
+    description:
+      "Praevoryn builds human-centred intelligent systems. Its flagship product is ASCEND, an operating system for human potential.",
+  },
+};
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://ascendai.space/#software",
+  name: "ASCEND",
+  url: "https://ascendai.space",
+  applicationCategory: "EducationalApplication",
+  operatingSystem: "Web",
+  description:
+    "ASCEND is an operating system for human potential that helps people find direction, discover relevant opportunities and make measurable progress.",
+  creator: {
+    "@type": "Organization",
+    "@id": "https://www.praevoryn.com/#organization",
+    name: "Praevoryn",
+    url: "https://www.praevoryn.com",
+  },
+};
 
 function ArrowIcon() {
   return (
@@ -19,6 +51,12 @@ function ArrowIcon() {
 export default function ProductsPage() {
   return (
     <main className="inner-page">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <SiteNavigation activePage="products" />
 
       <header className="inner-hero shell">
@@ -76,9 +114,10 @@ export default function ProductsPage() {
               </p>
 
               <p>
-                ASCEND helps people discover their purpose, define their
-                direction, find relevant opportunities and continually move
-                toward their highest potential.
+                ASCEND is Praevoryn&apos;s flagship product. It helps people
+                understand where they are, choose a direction, discover
+                relevant opportunities and turn their goals into measurable
+                progress.
               </p>
 
               <a
@@ -121,7 +160,7 @@ export default function ProductsPage() {
           </a>
 
           <a
-            href="https://www.instagram.com/praevoryn?igsi=MXU4MWc4dDB0cWQ2Yg=="
+            href="https://www.instagram.com/praevoryn"
             rel="noreferrer"
             target="_blank"
           >

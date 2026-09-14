@@ -1,6 +1,54 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 
 import SiteNavigation from "../components/SiteNavigation";
+
+const founderUrl = "https://www.praevoryn.com/founder";
+
+export const metadata: Metadata = {
+  title: "Chukwudumebi Orakwue, Founder and CEO",
+  description:
+    "Meet Chukwudumebi Orakwue, founder and CEO of Praevoryn and founder of ASCEND.",
+  alternates: { canonical: "/founder" },
+  openGraph: {
+    type: "profile",
+    url: founderUrl,
+    title: "Chukwudumebi Orakwue | Founder and CEO of Praevoryn",
+    description:
+      "The founder of Praevoryn and ASCEND is building human-centred technology for clarity, opportunity and progress.",
+    images: [
+      {
+        url: "/chukwudumebi-orakwue.jpg",
+        alt: "Chukwudumebi Orakwue, founder and CEO of Praevoryn",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chukwudumebi Orakwue | Founder and CEO of Praevoryn",
+    description: "Founder of Praevoryn and ASCEND.",
+    images: ["/chukwudumebi-orakwue.jpg"],
+  },
+};
+
+const founderSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${founderUrl}#person`,
+  name: "Chukwudumebi Orakwue",
+  url: founderUrl,
+  image: "https://www.praevoryn.com/chukwudumebi-orakwue.jpg",
+  jobTitle: "Founder and CEO",
+  worksFor: {
+    "@type": "Organization",
+    "@id": "https://www.praevoryn.com/#organization",
+    name: "Praevoryn",
+  },
+  knowsAbout: ["Praevoryn", "ASCEND", "human-centred technology"],
+  sameAs: [
+    "https://www.linkedin.com/in/chukwudumebi-orakwue-198230419",
+  ],
+};
 
 function ArrowIcon() {
   return (
@@ -19,6 +67,12 @@ function ArrowIcon() {
 export default function FounderPage() {
   return (
     <main className="inner-page founder-page">
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(founderSchema).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
       <SiteNavigation activePage="founder" />
 
       <section className="founder-hero shell">
@@ -87,9 +141,10 @@ export default function FounderPage() {
             </p>
 
             <p>
-              That experience became the foundation for ASCEND: a platform
-              created to help people understand where they are, decide where
-              they are going and build structured progress toward that future.
+              That experience became the foundation for ASCEND, which
+              Chukwudumebi founded as Praevoryn&apos;s flagship platform. The
+              system helps people understand where they are, decide where they
+              are going and build structured progress toward that future.
             </p>
 
             <p>
@@ -123,7 +178,7 @@ export default function FounderPage() {
           </a>
 
           <a
-            href="https://www.instagram.com/praevoryn?igsi=MXU4MWc4dDB0cWQ2Yg=="
+            href="https://www.instagram.com/praevoryn"
             rel="noreferrer"
             target="_blank"
           >

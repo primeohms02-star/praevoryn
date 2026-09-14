@@ -3,6 +3,46 @@ import { IBM_Plex_Mono, Manrope } from "next/font/google";
 
 import "./globals.css";
 
+const siteUrl = "https://www.praevoryn.com";
+
+const organisationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Praevoryn",
+  url: siteUrl,
+  logo: `${siteUrl}/praevoryn-mark.png`,
+  description:
+    "Praevoryn is a human-centred technology company building intelligent systems for progress.",
+  founder: {
+    "@type": "Person",
+    "@id": `${siteUrl}/founder#person`,
+    name: "Chukwudumebi Orakwue",
+    jobTitle: "Founder and CEO",
+    url: `${siteUrl}/founder`,
+  },
+  sameAs: [
+    "https://x.com/praevoryn",
+    "https://www.instagram.com/praevoryn",
+  ],
+  owns: {
+    "@type": "SoftwareApplication",
+    "@id": "https://ascendai.space/#software",
+    name: "ASCEND",
+    url: "https://ascendai.space",
+    description: "An operating system for human potential.",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  name: "Praevoryn",
+  url: siteUrl,
+  publisher: { "@id": `${siteUrl}/#organization` },
+};
+
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
@@ -15,7 +55,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://praevoryn.com"),
+  metadataBase: new URL(siteUrl),
 
   title: {
     default: "Praevoryn | Building What Comes Next",
@@ -24,6 +64,10 @@ export const metadata: Metadata = {
 
   description:
     "Praevoryn is a human-centred technology company building intelligent systems for progress.",
+
+  alternates: {
+    canonical: "/",
+  },
 
   keywords: [
     "Praevoryn",
@@ -46,11 +90,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://praevoryn.com",
+    url: siteUrl,
     siteName: "Praevoryn",
     title: "Praevoryn | Building What Comes Next",
     description:
       "A human-centred technology company building intelligent systems for progress.",
+    images: [
+      {
+        url: "/praevoryn-mark.png",
+        width: 1024,
+        height: 1024,
+        alt: "Praevoryn",
+      },
+    ],
   },
 
   twitter: {
@@ -58,6 +110,7 @@ export const metadata: Metadata = {
     title: "Praevoryn | Building What Comes Next",
     description:
       "A human-centred technology company building intelligent systems for progress.",
+    images: ["/praevoryn-mark.png"],
   },
 
   icons: {
@@ -75,6 +128,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} ${ibmPlexMono.variable}`}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([organisationSchema, websiteSchema]).replace(
+              /</g,
+              "\\u003c",
+            ),
+          }}
+          type="application/ld+json"
+        />
         {children}
       </body>
     </html>

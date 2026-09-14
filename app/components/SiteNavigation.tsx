@@ -198,7 +198,7 @@ export default function SiteNavigation({
                 </a>
 
                 <a
-                  href="https://www.instagram.com/praevoryn?igsi=MXU4MWc4dDB0cWQ2Yg=="
+                  href="https://www.instagram.com/praevoryn"
                   onClick={closeMenu}
                   rel="noreferrer"
                   target="_blank"
