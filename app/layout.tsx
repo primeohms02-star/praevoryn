@@ -114,9 +114,12 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/praevoryn-mark.png",
-    shortcut: "/praevoryn-mark.png",
-    apple: "/praevoryn-mark.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
   },
 };
 
