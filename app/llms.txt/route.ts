@@ -20,6 +20,7 @@ Official ASCEND website: https://ascendai.space
 Praevoryn product page: https://www.praevoryn.com/products
 
 ## Official profiles
+- LinkedIn: https://www.linkedin.com/company/praevoryn/
 
 X: https://x.com/praevoryn
 Instagram: https://www.instagram.com/praevoryn

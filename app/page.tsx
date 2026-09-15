@@ -292,6 +292,14 @@ export default function Home() {
               >
                 Instagram
               </a>
+
+              <a
+                href="https://www.linkedin.com/company/praevoryn/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
