@@ -3,6 +3,24 @@ import Link from "next/link";
 
 import SiteNavigation from "./components/SiteNavigation";
 
+const siteUrl = "https://www.praevoryn.com";
+
+const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${siteUrl}/#webpage`,
+  url: siteUrl,
+  name: "Praevoryn — Building what comes next",
+  headline: "Praevoryn builds human-centred technology for progress",
+  description:
+    "Praevoryn is a human-centred technology company building intelligent systems for progress.",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#organization` },
+  mainEntity: { "@id": `${siteUrl}/#organization` },
+  primaryImageOfPage: { "@id": `${siteUrl}/#logo` },
+  inLanguage: "en",
+};
+
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" fill="none" viewBox="0 0 24 24">
@@ -37,6 +55,13 @@ function PraevorynMark({ light = false }: { light?: boolean }) {
 export default function Home() {
   return (
     <main>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homePageSchema).replace(/</g, "\\u003c"),
+        }}
+        type="application/ld+json"
+      />
+
       <section className="hero" id="top">
         <SiteNavigation activePage="home" />
 
@@ -59,7 +84,7 @@ export default function Home() {
         <div className="hero-content shell">
           <p className="eyebrow">
             <span />
-            Human-centred technology
+            Praevoryn / Human-centred technology
           </p>
 
           <h1>
@@ -103,9 +128,9 @@ export default function Home() {
             </p>
 
             <p>
-              Praevoryn is the technology company behind ASCEND. We create
-              enduring intelligent systems around real human ambitions—not
-              technology for its own sake.
+              Praevoryn is a human-centred technology company and the company
+              behind ASCEND. We create enduring intelligent systems around
+              real human ambitions—not technology for its own sake.
             </p>
           </div>
         </div>

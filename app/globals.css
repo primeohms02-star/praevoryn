@@ -1205,6 +1205,25 @@ svg {
   text-transform: uppercase;
 }
 
+.founder-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 26px;
+  color: rgba(247, 245, 240, 0.72);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.founder-secondary-link:hover {
+  color: #fff;
+}
+
+.founder-secondary-link svg {
+  width: 15px;
+}
+
 .founder-linkedin svg {
   width: 17px;
   height: 17px;

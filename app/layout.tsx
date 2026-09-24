@@ -11,7 +11,17 @@ const organisationSchema = {
   "@id": `${siteUrl}/#organization`,
   name: "Praevoryn",
   url: siteUrl,
-  logo: `${siteUrl}/praevoryn-mark.png`,
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${siteUrl}/#logo`,
+    url: `${siteUrl}/praevoryn-mark.png`,
+    contentUrl: `${siteUrl}/praevoryn-mark.png`,
+    width: 1024,
+    height: 1024,
+    caption: "Praevoryn",
+  },
+  image: { "@id": `${siteUrl}/#logo` },
+  email: "hello@praevoryn.com",
   description:
     "Praevoryn is a human-centred technology company building intelligent systems for progress.",
   founder: {
@@ -20,12 +30,33 @@ const organisationSchema = {
     name: "Chukwudumebi Orakwue",
     jobTitle: "Founder and CEO",
     url: `${siteUrl}/founder`,
+    image: `${siteUrl}/chukwudumebi-orakwue.webp`,
+    description:
+      "Chukwudumebi Orakwue is a technology founder, the founder and CEO of Praevoryn, and the founder and CEO of ASCEND.",
+    sameAs: [
+      "https://www.linkedin.com/in/chukwudumebi-orakwue-198230419",
+      "https://ascendai.space/founder",
+    ],
   },
   sameAs: [
     "https://x.com/praevoryn",
     "https://www.instagram.com/praevoryn",
       "https://www.linkedin.com/company/praevoryn/",
     ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "general enquiries",
+    email: "hello@praevoryn.com",
+    availableLanguage: "English",
+  },
+  knowsAbout: [
+    "Human-centred technology",
+    "Intelligent systems",
+    "Human potential",
+    "Artificial intelligence",
+    "Personal development technology",
+    "Opportunity discovery",
+  ],
   owns: {
     "@type": "SoftwareApplication",
     "@id": "https://ascendai.space/#software",
@@ -40,8 +71,12 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": `${siteUrl}/#website`,
   name: "Praevoryn",
+  alternateName: "praevoryn.com",
   url: siteUrl,
+  description:
+    "Praevoryn is a human-centred technology company building intelligent systems for progress.",
   publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en",
 };
 
 const manrope = Manrope({
@@ -66,6 +101,8 @@ export const metadata: Metadata = {
   description:
     "Praevoryn is a human-centred technology company building intelligent systems for progress.",
 
+  applicationName: "Praevoryn",
+
   alternates: {
     canonical: "/",
   },
@@ -87,6 +124,20 @@ export const metadata: Metadata = {
 
   creator: "Praevoryn",
   publisher: "Praevoryn",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  referrer: "origin-when-cross-origin",
 
   openGraph: {
     type: "website",

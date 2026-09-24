@@ -3,15 +3,22 @@ const content = `# Praevoryn
 > Praevoryn is a human-centred technology company building intelligent systems for progress.
 
 Canonical website: https://www.praevoryn.com
+Official name: Praevoryn
+Category: Human-centred technology company
+Tagline: Building what comes next.
 
 ## Company
 
 Praevoryn builds technology designed to strengthen human clarity, capability and agency. Its guiding belief is that technology should expand what people can become.
 
+Praevoryn is the parent technology company behind ASCEND. Praevoryn and ASCEND are distinct brands: Praevoryn is the company, and ASCEND is its flagship platform.
+
 ## Founder
 
-Chukwudumebi Orakwue is the founder and CEO of Praevoryn and the founder of ASCEND.
+Chukwudumebi Orakwue is a technology founder, the founder and CEO of Praevoryn, and the founder and CEO of ASCEND.
 Founder profile: https://www.praevoryn.com/founder
+ASCEND founder profile: https://ascendai.space/founder
+Founder LinkedIn: https://www.linkedin.com/in/chukwudumebi-orakwue-198230419
 
 ## Flagship product
 
@@ -24,7 +31,6 @@ Praevoryn product page: https://www.praevoryn.com/products
 
 X: https://x.com/praevoryn
 Instagram: https://www.instagram.com/praevoryn
-Founder LinkedIn: https://www.linkedin.com/in/chukwudumebi-orakwue-198230419
 `;
 
 export function GET() {

@@ -4,11 +4,15 @@ import type { Metadata } from "next";
 import SiteNavigation from "../components/SiteNavigation";
 
 const founderUrl = "https://www.praevoryn.com/founder";
+const ascendFounderUrl = "https://ascendai.space/founder";
+const founderLinkedInUrl =
+  "https://www.linkedin.com/in/chukwudumebi-orakwue-198230419";
 
 export const metadata: Metadata = {
   title: "Chukwudumebi Orakwue, Founder and CEO",
   description:
-    "Meet Chukwudumebi Orakwue, founder and CEO of Praevoryn and founder of ASCEND.",
+    "Meet Chukwudumebi Orakwue, technology founder, Founder and CEO of Praevoryn, and Founder and CEO of ASCEND.",
+  authors: [{ name: "Chukwudumebi Orakwue", url: founderUrl }],
   alternates: { canonical: "/founder" },
   openGraph: {
     type: "profile",
@@ -33,20 +37,57 @@ export const metadata: Metadata = {
 
 const founderSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${founderUrl}#person`,
-  name: "Chukwudumebi Orakwue",
-  url: founderUrl,
-  image: "https://www.praevoryn.com/chukwudumebi-orakwue.webp",
-  jobTitle: "Founder and CEO",
-  worksFor: {
-    "@type": "Organization",
-    "@id": "https://www.praevoryn.com/#organization",
-    name: "Praevoryn",
-  },
-  knowsAbout: ["Praevoryn", "ASCEND", "human-centred technology"],
-  sameAs: [
-    "https://www.linkedin.com/in/chukwudumebi-orakwue-198230419",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": `${founderUrl}#profile-page`,
+      url: founderUrl,
+      name: "Chukwudumebi Orakwue — Founder and CEO",
+      description:
+        "Official founder profile for Chukwudumebi Orakwue, Founder and CEO of Praevoryn and ASCEND.",
+      isPartOf: { "@id": "https://www.praevoryn.com/#website" },
+      mainEntity: { "@id": `${founderUrl}#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${founderUrl}#person`,
+      name: "Chukwudumebi Orakwue",
+      givenName: "Chukwudumebi",
+      familyName: "Orakwue",
+      url: founderUrl,
+      image: {
+        "@type": "ImageObject",
+        url: "https://www.praevoryn.com/chukwudumebi-orakwue.webp",
+        width: 1172,
+        height: 1342,
+        caption: "Chukwudumebi Orakwue",
+      },
+      jobTitle: "Founder and Chief Executive Officer",
+      description:
+        "Chukwudumebi Orakwue is a technology founder, the Founder and CEO of Praevoryn, and the Founder and CEO of ASCEND.",
+      worksFor: [
+        {
+          "@type": "Organization",
+          "@id": "https://www.praevoryn.com/#organization",
+          name: "Praevoryn",
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://ascendai.space/#organization",
+          name: "ASCEND",
+        },
+      ],
+      knowsAbout: [
+        "Human-centred technology",
+        "Human potential",
+        "Product strategy",
+        "Strategic decision support",
+        "Opportunity discovery",
+        "Personal development",
+      ],
+      sameAs: [founderLinkedInUrl, ascendFounderUrl],
+      mainEntityOfPage: { "@id": `${founderUrl}#profile-page` },
+    },
   ],
 };
 
@@ -94,7 +135,7 @@ export default function FounderPage() {
         <div className="founder-introduction">
           <p className="eyebrow">
             <span />
-            Founder and CEO
+            Founder and CEO — Praevoryn &amp; ASCEND
           </p>
 
           <h1>
@@ -109,8 +150,18 @@ export default function FounderPage() {
           </p>
 
           <a
+            className="founder-secondary-link"
+            href={ascendFounderUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            View ASCEND founder profile
+            <ArrowIcon />
+          </a>
+
+          <a
             className="founder-linkedin"
-            href="https://www.linkedin.com/in/chukwudumebi-orakwue-198230419"
+            href={founderLinkedInUrl}
             rel="noreferrer"
             target="_blank"
           >
