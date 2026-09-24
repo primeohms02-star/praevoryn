@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "The founder of Praevoryn and ASCEND is building human-centred technology for clarity, opportunity and progress.",
     images: [
       {
-        url: "/chukwudumebi-orakwue.jpg",
+        url: "/chukwudumebi-orakwue.webp",
         alt: "Chukwudumebi Orakwue, founder and CEO of Praevoryn",
       },
     ],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chukwudumebi Orakwue | Founder and CEO of Praevoryn",
     description: "Founder of Praevoryn and ASCEND.",
-    images: ["/chukwudumebi-orakwue.jpg"],
+    images: ["/chukwudumebi-orakwue.webp"],
   },
 };
 
@@ -37,7 +37,7 @@ const founderSchema = {
   "@id": `${founderUrl}#person`,
   name: "Chukwudumebi Orakwue",
   url: founderUrl,
-  image: "https://www.praevoryn.com/chukwudumebi-orakwue.jpg",
+  image: "https://www.praevoryn.com/chukwudumebi-orakwue.webp",
   jobTitle: "Founder and CEO",
   worksFor: {
     "@type": "Organization",
@@ -82,7 +82,7 @@ export default function FounderPage() {
             fill
             priority
             sizes="(max-width: 800px) 100vw, 46vw"
-            src="/chukwudumebi-orakwue.jpg"
+            src="/chukwudumebi-orakwue.webp"
           />
 
           <div className="founder-image-label">
