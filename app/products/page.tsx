@@ -6,13 +6,13 @@ import SiteNavigation from "../components/SiteNavigation";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore ASCEND, Praevoryn's flagship product: an operating system that helps people find direction, opportunities and measurable progress.",
+    "Explore ASCEND for personal growth and Vybkick for turning TikTok ideas into editable scripts.",
   alternates: { canonical: "/products" },
   openGraph: {
     url: "https://www.praevoryn.com/products",
     title: "Products | Praevoryn",
     description:
-      "Praevoryn builds human-centred intelligent systems. Its flagship product is ASCEND, an operating system for human potential.",
+      "Explore ASCEND and Vybkick, two products by Praevoryn.",
   },
 };
 
@@ -53,7 +53,7 @@ export default function ProductsPage() {
     <main className="inner-page">
       <script
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema).replace(/</g, "\\u003c"),
+          __html: JSON.stringify([productSchema, { "@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://www.vybkick.com/#software", name: "Vybkick", url: "https://www.vybkick.com", operatingSystem: "Web", applicationCategory: "MultimediaApplication", creator: productSchema.creator }]).replace(/</g, "\\u003c"),
         }}
         type="application/ld+json"
       />
@@ -132,19 +132,16 @@ export default function ProductsPage() {
           </div>
         </article>
 
-        <div className="future-products">
-          <article>
-            <span>02</span>
-            <p>FUTURE SYSTEM</p>
-            <h3>What comes next is still being built.</h3>
-          </article>
-
-          <article>
-            <span>03</span>
-            <p>FUTURE SYSTEM</p>
-            <h3>New possibilities will join the portfolio.</h3>
-          </article>
-        </div>
+        <article className="portfolio-product" id="vybkick">
+          <div className="portfolio-product-top"><span>02</span><span>CREATOR TOOL</span><span>CREATOR PILOT</span></div>
+          <div className="portfolio-product-body">
+            <div className="portfolio-product-identity"><h2>Vybkick</h2></div>
+            <div className="portfolio-product-copy">
+              <p>Vybkick helps TikTok creators figure out what to say on camera. Bring a rough idea, choose your language, tone and video length, and Vyb suggests an opening, talking points and an ending. Pick the lines you like, make them sound like you, and save your draft for filming.</p>
+              <a href="https://www.vybkick.com/">Explore Vybkick <ArrowIcon /></a>
+            </div>
+          </div>
+        </article>
       </section>
 
       <footer className="inner-footer shell">
