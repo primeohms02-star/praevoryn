@@ -135,7 +135,10 @@ export default function ProductsPage() {
         <article className="portfolio-product" id="vybkick">
           <div className="portfolio-product-top"><span>02</span><span>CREATOR TOOL</span><span>CREATOR PILOT</span></div>
           <div className="portfolio-product-body">
-            <div className="portfolio-product-identity"><h2>Vybkick</h2></div>
+            <div className="portfolio-product-identity">
+              <Image src="https://www.vybkick.com/favicon.ico" alt="" width={90} height={90} unoptimized />
+              <h2>Vybkick</h2>
+            </div>
             <div className="portfolio-product-copy">
               <p>Vybkick helps TikTok creators figure out what to say on camera. Bring a rough idea, choose your language, tone and video length, and Vyb suggests an opening, talking points and an ending. Pick the lines you like, make them sound like you, and save your draft for filming.</p>
               <a href="https://www.vybkick.com/">Explore Vybkick <ArrowIcon /></a>
