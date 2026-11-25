@@ -143,7 +143,7 @@ export default function ProductsPage() {
             </div>
             <div className="portfolio-product-copy">
               <p>Vybkick helps TikTok creators figure out what to say and how to film it. Start with an idea, choose your language, tone and video length, and Vyb suggests lines you can edit in your own voice.</p>
-              <p>Seen a TikTok you’d like to learn from? Paste its public link to see how the creator uses camera shots, cuts and sound. Open “Words and time frame” to follow along, then choose “Make it my own” to save an idea for your next video.</p>
+              <p>Seen a TikTok you’d like to learn from? Paste its public link to see how the creator uses camera shots, cuts and sound. Open “Words and time frame” to follow along, then choose “Make it my own” to get a similar idea for your next video.</p>
               <a href="https://www.vybkick.com/">Explore Vybkick <ArrowIcon /></a>
             </div>
           </div>
