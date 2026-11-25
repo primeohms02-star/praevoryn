@@ -6,13 +6,13 @@ import SiteNavigation from "../components/SiteNavigation";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore ASCEND for personal growth and Vybkick for turning TikTok ideas into editable scripts.",
+    "Explore ASCEND for personal growth and Vybkick for TikTok video breakdowns and editable scripts.",
   alternates: { canonical: "/products" },
   openGraph: {
     url: "https://www.praevoryn.com/products",
     title: "Products | Praevoryn",
     description:
-      "Explore ASCEND and Vybkick, two products by Praevoryn.",
+      "Explore ASCEND for personal growth and Vybkick for TikTok video breakdowns and editable scripts.",
   },
 };
 
@@ -53,7 +53,7 @@ export default function ProductsPage() {
     <main className="inner-page">
       <script
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([productSchema, { "@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://www.vybkick.com/#software", name: "Vybkick", url: "https://www.vybkick.com", operatingSystem: "Web", applicationCategory: "MultimediaApplication", creator: productSchema.creator }]).replace(/</g, "\\u003c"),
+          __html: JSON.stringify([productSchema, { "@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://www.vybkick.com/#app", name: "Vybkick", url: "https://www.vybkick.com", operatingSystem: "Web", applicationCategory: "MultimediaApplication", description: "Vybkick helps creators analyse public TikTok videos and turn their own ideas into scripts they can edit and film.", creator: productSchema.creator }]).replace(/</g, "\\u003c"),
         }}
         type="application/ld+json"
       />
@@ -142,7 +142,8 @@ export default function ProductsPage() {
               <h2>VYBKICK</h2>
             </div>
             <div className="portfolio-product-copy">
-              <p>Vybkick helps TikTok creators figure out what to say on camera. Bring a rough idea, choose your language, tone and video length, and Vyb suggests an opening, talking points and an ending. Pick the lines you like, make them sound like you, and save your draft for filming.</p>
+              <p>Vybkick helps TikTok creators figure out what to say and how to film it. Start with an idea, choose your language, tone and video length, and Vyb suggests lines you can edit in your own voice.</p>
+              <p>Seen a TikTok you’d like to learn from? Paste its public link to see how the creator uses camera shots, cuts and sound. Open “Words and time frame” to follow along, then choose “Make it my own” to save an idea for your next video.</p>
               <a href="https://www.vybkick.com/">Explore Vybkick <ArrowIcon /></a>
             </div>
           </div>
